@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/init.php';
+include './_init.php';
 ?>
 <!DOCTYPE html>
 <html>

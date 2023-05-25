@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/init.php';
+include './_init.php';
 
 // Apply new API environment credentials
 if(isset($_POST['update_api_credentials'])) {

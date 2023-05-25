@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include __DIR__ . '/init.php';
+include './_init.php';
 
 if(isset($_POST['auth_token'])) {
     $_SESSION['authToken'] = $_POST['auth_token'] ?? null;
