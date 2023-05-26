@@ -17,7 +17,7 @@ if(isset($_POST['auth_token'])) {
     <script>
         window.document.addEventListener('DOMContentLoaded', () => {
             let fail = (error) => {
-                window.location = `<?php echo $yourDomain ?>/fail.php?error[]=${error}`
+                window.location = `fail.php?error[]=${error}`
             }
 
             window.fetch("<?php echo $_SESSION['apiDomain'] ?>/profile", {

@@ -6,6 +6,9 @@ include './_init.php';
 if(isset($_POST['update_api_credentials'])) {
     $_SESSION['apiDomain'] = $_POST['domain'];
     $_SESSION['apiAccountCode'] = $_POST['account_code'];
+    if(isset($_POST['your_domain'])) {
+        $_SESSION['yourDomain'] = $_POST['your_domain'];
+    }
 }
 
 ?>
@@ -50,7 +53,7 @@ if(isset($_POST['update_api_credentials'])) {
     </form>
 
     <!-- This form is to simply determine which environment you would like to test -->
-    <form action="<?php echo $yourDomain ?>/index.php" method="post">
+    <form action="index.php" method="post">
         <h1>Api credentials</h1>
         <?php
             if(isset($_POST['update_api_credentials'])) {
@@ -66,6 +69,10 @@ if(isset($_POST['update_api_credentials'])) {
 
         <label for="apiAccountCode">API account code</label><br>
         <input type="text" name="account_code" id="apiAccountCode" value="<?php echo $_SESSION['apiAccountCode'] ?>" required placeholder="Provided by Golfspot">
+        <br>
+
+        <label for="yourDomain">Your domain (in case of proxies like Ngrok)</label><br>
+        <input type="text" name="your_domain" id="yourDomain" value="<?php echo $_SESSION['yourDomain'] ?? '' ?>" placeholder="Empty for default">
         <br>
 
         <input type="submit" name="update_api_credentials" value="Update">
