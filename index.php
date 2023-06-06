@@ -57,7 +57,7 @@ if(isset($_POST['update_api_credentials'])) {
 
     <!-- This form is to simply determine which environment you would like to test -->
     <form action="index.php" method="post">
-        <h1>Api credentials</h1>
+        <h1>API credentials</h1>
         <?php
             if(isset($_POST['update_api_credentials'])) {
         ?>
