@@ -6,8 +6,11 @@ include './_init.php';
 if(isset($_POST['update_api_credentials'])) {
     $_SESSION['apiDomain'] = $_POST['domain'];
     $_SESSION['apiAccountCode'] = $_POST['account_code'];
+
+    // Overwrite $yourDomain when it has been requested to change
     if(isset($_POST['your_domain'])) {
         $_SESSION['yourDomain'] = $_POST['your_domain'];
+        $yourDomain = rtrim($_SESSION['yourDomain'], '/');
     }
 }
 
