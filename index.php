@@ -12,6 +12,11 @@ if(isset($_POST['update_api_credentials'])) {
         $_SESSION['yourDomain'] = $_POST['your_domain'];
         $yourDomain = rtrim($_SESSION['yourDomain'], '/');
     }
+
+    // Overwrite $yourDomain when it has been requested to change
+    if(isset($_POST['golfdashboard_domain'])) {
+        $_SESSION['golfdashboardDomain'] = $_POST['golfdashboard_domain'];
+    }
 }
 
 ?>
@@ -76,6 +81,10 @@ if(isset($_POST['update_api_credentials'])) {
 
         <label for="yourDomain">Your domain (in case of proxies like Ngrok)</label><br>
         <input type="text" name="your_domain" id="yourDomain" value="<?php echo $_SESSION['yourDomain'] ?? '' ?>" placeholder="Empty for default">
+        <br>
+
+        <label for="golfdashboardDomain">Golfdashboard domain</label><br>
+        <input type="text" name="golfdashboard_domain" id="golfdashboardDomain" value="<?php echo $_SESSION['golfdashboardDomain'] ?>">
         <br>
 
         <input type="submit" name="update_api_credentials" value="Update">

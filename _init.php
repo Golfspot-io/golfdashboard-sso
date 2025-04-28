@@ -12,3 +12,5 @@ if(isset($_SESSION['yourDomain'])) $yourDomain = rtrim($_SESSION['yourDomain'], 
 if(!isset($_SESSION['apiDomain'])) $_SESSION['apiDomain'] = 'https://api.golfspot.io/golfdashboard/sso';
 
 if(!isset($_SESSION['apiAccountCode'])) $_SESSION['apiAccountCode'] = '';
+
+if (!isset($_SESSION['golfdashboardDomain'])) $_SESSION['golfdashboardDomain'] = 'https://{prefix}.golfdashboard.com';
